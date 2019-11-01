@@ -8,10 +8,9 @@
     "start": "webpack-dev-server --open --mode development",
     "build": "webpack --mode production",
     "watch": "webpack --watch",
-    "test": "jest --watch",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --write \"**/*.+(js|jsx|json|yml|yaml|css|md|vue|html)\"",
-    "lint": "eslint .",
-    "e2e": "cypress open"
+    "lint": "eslint ."
   },
   "author": "jebb_dev",
   "license": "ISC",
@@ -24,7 +23,6 @@
     "babel-loader": "^8.0.6",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.2.0",
-    "cypress": "^3.6.0",
     "eslint": "^6.6.0",
     "eslint-config-react": "^1.1.7",
     "eslint-loader": "^3.0.2",
@@ -32,7 +30,6 @@
     "file-loader": "^4.2.0",
     "html-webpack-plugin": "^3.2.0",
     "husky": "^3.0.9",
-    "jest": "^24.9.0",
     "prettier": "1.18.2",
     "style-loader": "^1.0.0",
     "webpack": "^4.41.1",
@@ -40,8 +37,6 @@
     "webpack-dev-server": "^3.8.2"
   },
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.2",
-    "@testing-library/react": "^9.3.1",
     "lodash": "^4.17.15",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
