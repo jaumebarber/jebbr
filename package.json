@@ -1,9 +1,9 @@
 {
-  "name": "jebbdev",
+  "name": "jebbr",
   "version": "1.0.0",
-  "description": "jebb_dev's personal blog",
+  "description": "jebbr",
   "main": "./src/index.js",
-  "url": "https://github.com/jaumebarber/jebbdev.git",
+  "url": "https://github.com/jaumebarber/jebbr.git",
   "scripts": {
     "start": "webpack-dev-server --open --mode development",
     "build": "webpack --mode production",
