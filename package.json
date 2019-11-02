@@ -22,6 +22,7 @@
     "@babel/preset-react": "^7.6.3",
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
+    "bulma": "^0.8.0",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.2.0",
     "cypress": "^3.6.0",
@@ -29,11 +30,15 @@
     "eslint-config-react": "^1.1.7",
     "eslint-loader": "^3.0.2",
     "eslint-plugin-react": "^7.16.0",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "file-loader": "^4.2.0",
     "html-webpack-plugin": "^3.2.0",
     "husky": "^3.0.9",
     "jest": "^24.9.0",
+    "mini-css-extract-plugin": "^0.8.0",
+    "node-sass": "^4.13.0",
     "prettier": "1.18.2",
+    "sass-loader": "^8.0.0",
     "style-loader": "^1.0.0",
     "webpack": "^4.41.1",
     "webpack-cli": "^3.3.9",
@@ -50,7 +55,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint && npm run format"
+      "pre-commit": "yarn lint && yarn format"
     }
   },
   "jest": {
