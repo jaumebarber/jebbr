@@ -1,6 +1,6 @@
 import React from 'react'
-import './App.css'
-import Editor from '../Editor/Editor'
+import './App.component.styles.scss'
+import Article from '../../containers/Article/Article.container'
 
 const handleSend = newArticle => {
   console.log(newArticle)
@@ -9,7 +9,7 @@ const handleSend = newArticle => {
 const App = ({ appTitle }) => (
   <div className="app">
     <h1>{appTitle}</h1>
-    <Editor onSend={handleSend} />
+    <Article onSend={handleSend} />
   </div>
 )
 
