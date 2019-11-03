@@ -1,8 +1,8 @@
 import React from 'react'
 import { render, fireEvent, cleanup } from '@testing-library/react'
-import Editor from './Editor'
+import Article from './Article.container'
 
-describe('Editor component', () => {
+describe('An Article', () => {
   let getByTestId
 
   afterEach(cleanup)
@@ -11,13 +11,13 @@ describe('Editor component', () => {
     let sendHandler
     beforeEach(() => {
       sendHandler = jest.fn()
-      ;({ getByTestId } = render(<Editor onSend={sendHandler} />))
+      ;({ getByTestId } = render(<Article onSend={sendHandler} />))
 
-      fireEvent.change(getByTestId('editorTitle'), {
+      fireEvent.change(getByTestId('articleTitle'), {
         target: { value: 'New Article' },
       })
 
-      fireEvent.change(getByTestId('editorText'), {
+      fireEvent.change(getByTestId('articleText'), {
         target: { value: 'This is the body of the article' },
       })
 
@@ -25,14 +25,14 @@ describe('Editor component', () => {
     })
 
     it('clears the text fields', () => {
-      expect(getByTestId('editorTitle').value).toEqual('')
-      expect(getByTestId('editorText').value).toEqual('')
+      expect(getByTestId('articleTitle').value).toEqual('')
+      expect(getByTestId('articleText').value).toEqual('')
     })
 
     it('calls the sendHandler', () => {
       const mockEditor = {
-        editorTitle: 'New Article',
-        editorText: 'This is the body of the article',
+        articleTitle: 'New Article',
+        articleText: 'This is the body of the article',
       }
       expect(sendHandler).toHaveBeenCalledWith(mockEditor)
     })
