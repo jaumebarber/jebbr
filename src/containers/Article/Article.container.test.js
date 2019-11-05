@@ -30,11 +30,11 @@ describe('An Article', () => {
     })
 
     it('calls the sendHandler', () => {
-      const mockEditor = {
+      const mockArticle = {
         articleTitle: 'New Article',
         articleText: 'This is the body of the article'
       }
-      expect(sendHandler).toHaveBeenCalledWith(mockEditor)
+      expect(sendHandler).toHaveBeenCalledWith(mockArticle)
     })
   })
 })
