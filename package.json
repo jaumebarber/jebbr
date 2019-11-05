@@ -5,8 +5,8 @@
   "main": "./src/index.js",
   "url": "https://github.com/jaumebarber/jebbr.git",
   "scripts": {
-    "start": "webpack-dev-server --open --mode development",
-    "build": "webpack --mode production",
+    "start": "webpack-dev-server --open --env.NODE_ENV=development",
+    "build": "webpack --env.NODE_ENV=production",
     "watch": "webpack --watch",
     "test": "jest --watch",
     "format": "prettier --write \"**/*.+(js|jsx|json|yml|yaml|css|md|vue|html)\"",
