@@ -1,10 +1,17 @@
 import React, { Component } from 'react'
-import Editor from '../../components/Editor/Editor.component'
+import Editor from '../../views/Editor/Editor.view'
+import Post from '../../views/Post/Post.view'
 
 class Article extends Component {
   state = {
-    articleTitle: '',
-    articleText: ''
+    timestamp: Date.now(),
+    title: '',
+    body: ''
+  }
+
+  get date() {
+    const longDate = new Date(this.state.timestamp)
+    return longDate.toLocaleDateString('en-US')
   }
 
   handleChange = event => {
@@ -14,21 +21,39 @@ class Article extends Component {
   }
 
   publish = () => {
-    const { onSend } = this.props
-    onSend(this.state)
+    const { onPublish } = this.props
     this.setState({
-      articleTitle: '',
-      articleText: ''
+      timestamp: Date.now()
+    })
+    onPublish(this.state)
+    this.setState({
+      title: '',
+      body: ''
     })
   }
 
-  render = () => (
-    <Editor
-      state={this.state}
-      handleChange={this.handleChange}
-      publish={this.publish}
-    />
-  )
+  render = () => {
+    const { articles } = this.props
+    return (
+      <>
+        {articles
+          ? articles.map(article => (
+              <Post
+                key={`article-${article.timestamp}`}
+                date={this.date}
+                title={article.title}
+                body={article.body}
+              />
+            ))
+          : ''}
+        <Editor
+          article={this.state}
+          handleChange={this.handleChange}
+          publish={this.publish}
+        />
+      </>
+    )
+  }
 }
 
 export default Article

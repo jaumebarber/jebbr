@@ -13,11 +13,11 @@ describe('An Article', () => {
       sendHandler = jest.fn()
       ;({ getByTestId } = render(<Article onSend={sendHandler} />))
 
-      fireEvent.change(getByTestId('articleTitle'), {
+      fireEvent.change(getByTestId('title'), {
         target: { value: 'New Article' }
       })
 
-      fireEvent.change(getByTestId('articleText'), {
+      fireEvent.change(getByTestId('body'), {
         target: { value: 'This is the body of the article' }
       })
 
@@ -25,14 +25,14 @@ describe('An Article', () => {
     })
 
     it('clears the text fields', () => {
-      expect(getByTestId('articleTitle').value).toEqual('')
-      expect(getByTestId('articleText').value).toEqual('')
+      expect(getByTestId('title').value).toEqual('')
+      expect(getByTestId('body').value).toEqual('')
     })
 
     it('calls the sendHandler', () => {
       const mockArticle = {
-        articleTitle: 'New Article',
-        articleText: 'This is the body of the article'
+        title: 'New Article',
+        body: 'This is the body of the article'
       }
       expect(sendHandler).toHaveBeenCalledWith(mockArticle)
     })
