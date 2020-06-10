@@ -38,13 +38,13 @@ class Article extends Component {
       <>
         {articles
           ? articles.map(article => (
-              <Post
-                key={`article-${article.timestamp}`}
-                date={this.date}
-                title={article.title}
-                body={article.body}
-              />
-            ))
+            <Post
+              key={`article-${article.timestamp}`}
+              date={this.date}
+              title={article.title}
+              body={article.body}
+            />
+          ))
           : ''}
         <Editor
           article={this.state}
